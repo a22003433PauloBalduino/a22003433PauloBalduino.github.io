@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <title>Paulo Balduino</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Faz o body ocupar 100% da altura da janela */
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
@@ -25,6 +31,7 @@
     }
 
     main {
+      flex: 1; /* faz o main ocupar o espaço disponível */
       padding: 20px;
       max-width: 800px;
       margin: auto;
@@ -44,17 +51,10 @@
       padding-left: 20px;
     }
 
-    img {
-      display: block;
-      margin: 20px auto;
-      max-width: 200px;
-    }
-
     footer {
       text-align: center;
       background-color: #f1f1f1;
       padding: 10px;
-      margin-top: 20px;
       font-size: 0.9em;
       color: #555;
     }
@@ -82,7 +82,6 @@
     <li>React e Next.js</li>
   </ul>
   <p>Iremos criar soluções criativas!</p>
-  <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web">
 </main>
 
 <footer>
