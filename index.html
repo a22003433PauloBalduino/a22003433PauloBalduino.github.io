@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>Paulo Balduino</title>
   <style>
-    /* Faz o body ocupar 100% da altura da janela */
     html, body {
       height: 100%;
       margin: 0;
@@ -30,20 +29,26 @@
       margin: 0;
     }
 
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     main {
-      flex: 1; /* faz o main ocupar o espaço disponível */
+      flex: 1;
       padding: 20px;
       max-width: 800px;
       margin: auto;
-    }
-
-    a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     ul {
@@ -64,6 +69,12 @@
 
 <header>
   <h1>Primeira Página Web!</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="../local.html">Localização</a>
+    <a href="../multimedia.html">Multimédia</a>
+    <a href="../info.html">Informação</a>
+  </nav>
 </header>
 
 <main>
