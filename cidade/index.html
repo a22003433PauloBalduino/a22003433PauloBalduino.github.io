@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-    </head>
-    <body>
-        <header>
-            <h1>A minha Cidade</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="local.html">Localização</a>
-                <a href="multimedia.html">Multimédia</a>
-                <a href="info.html">Informação</a>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>Cidade</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* imagem de fundo */
+            background: url('https://i.imgur.com/fD1bwAh.jpeg') no-repeat center center fixed;
+            background-size: cover; /* cobre o ecrã inteiro */
+            font-family: Arial, sans-serif;
+        }
 
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-        </main>
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* semitransparente p/ ver a imagem atrás */
+            color: white;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
 
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main, footer {
+            background-color: rgba(255, 255, 255, 0.8); /* fundo translúcido p/ legibilidade */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A minha Cidade</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+        <p>A minha cidade é muito linda!!!</p>
+    </main>
+
+    <footer>
+        <p>DIW 2025</p>
+    </footer>
+</body>
 </html>
