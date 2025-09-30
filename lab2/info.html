@@ -1,49 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Informação</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<title>Informação</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    font-size: 18px;
+}
 
-        nav {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
-        }
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
-        main {
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Tabela */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 40%; /* Diminuído de 80% para 60% */
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #888888; /* Alterado de azul para cinzento */
+    color: white;
+}
+
+td {
+    color: #555;
+}
+
+.curiosidades {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.curiosidades h3 {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.curiosidades ul li {
+    margin-bottom: 8px;
+}
+</style>
 </head>
 <body>
-    <nav>
-     <a href="../index.html">Home</a>
-     <a href="index.html">Cidade</a>
-     <a href="local.html">Localização</a>
-     <a href="multimedia.html">Multimédia</a>
-     <a href="info.html">Informação</a>
-    </nav>
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">Cidade</a>
+    <a href="local.html">Localização</a>
+    <a href="multimedia.html">Multimédia</a>
+    <a href="info.html">Informação</a>
+</nav>
+<main>
+    <h1>Informação</h1>
+    <p>Informações relevantes sobre a cidade de Cascais.</p>
 
-    <main>
-        <h1>Informação</h1>
-    </main>
+    <!-- Tabela de informações -->
+    <table>
+        <tr>
+            <th rowspan="2">Demografia</th>
+            <td>População</td>
+            <td>214.158 hab</td>
+        </tr>
+        <tr>
+            <td>Densidade populacional</td>
+            <td>1.500 hab/km²</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Geografia</th>
+            <td>Área</td>
+            <td>97 km²</td>
+        </tr>
+        <tr>
+            <td>Região</td>
+            <td>Lisboa</td>
+        </tr>
+        <tr>
+            <th>País</th>
+            <td colspan="2">Portugal</td>
+        </tr>
+        <tr>
+            <th>Website</th>
+            <td colspan="2"><a href="https://www.cascais.pt" target="_blank">www.cascais.pt</a></td>
+        </tr>
+    </table>
+
+    <!-- Lista de curiosidades -->
+    <div class="curiosidades">
+        <h3>Curiosidades sobre Cascais</h3>
+        <ul>
+            <li>Cascais foi um importante refúgio de pescadores antes de se tornar cidade turística.</li>
+            <li>É conhecida pelas suas praias e pelo Estoril, famoso pelo Casino e circuito de Fórmula 1.</li>
+            <li>A cidade tem um clima mediterrânico ameno durante quase todo o ano.</li>
+            <li>O centro histórico de Cascais preserva ruas estreitas e coloridas, com charme tradicional.</li>
+            <li>Cascais é ponto de partida de trilhos para explorar a costa atlântica e a serra de Sintra.</li>
+        </ul>
+    </div>
+</main>
 </body>
 </html>
