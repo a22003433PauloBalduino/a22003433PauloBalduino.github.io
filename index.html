@@ -1,102 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <title>Paulo Balduino</title>
+  <meta charset="UTF-8">
+  <title>Hero Page - Paulo Balduino</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
+    * {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #0073e6;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    nav {
-      margin-top: 10px;
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
     }
 
     nav a {
-      margin: 0 10px;
-      color: white;
       text-decoration: none;
+      color: white;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ffcc00;
     }
 
-    main {
-      flex: 1;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    /* ===== MENU HAMBURGUER EXTRA ===== */
+    .menu-container {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
     }
 
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
+    .menu-btn {
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
     }
 
-    footer {
+    .menu-btn span {
+      display: block;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: rgba(255,255,255,0.95);
+      border-radius: 5px;
+      padding: 0.5rem 0;
+      flex-direction: column;
+      min-width: 150px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .dropdown a {
+      color: black;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #ddd;
+    }
+
+    .menu-container.active .dropdown {
+      display: flex;
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background-color: #f1f1f1;
-      padding: 10px;
-      font-size: 0.9em;
-      color: #555;
+      height: 100vh; /* cada secção ocupa a tela inteira */
+    }
+
+    /* ===== HERO IMAGE ===== */
+    #inicio {
+     width: 100%;
+     min-height: 100vh;
+     background-image: url("lab3/images/imagemFundo.jpg");
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-size: cover;
+     position: relative;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    #inicio .overlay {
+      background: rgba(0,0,0,0.5);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    #inicio h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    #inicio p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background: #ffcc00;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #ffaa00;
+    }
+
+    /* ===== PROJETOS ===== */
+    #projetos {
+      background: #2e2e2e; /* cinzento escuro */
+      flex-direction: column;
+    }
+
+    #projetos h2 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: white; /* título a branco */
+    }
+
+    .cards {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* ===== DISCIPLINA ===== */
+    #cadeira {
+      background: #d1ecf1;
+      flex-direction: row;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    #cadeira .texto {
+      flex: 1 1 300px;
+    }
+
+    #cadeira .wordcloud {
+      flex: 1 1 300px;
+    }
+
+    #cadeira h2 {
+      margin-bottom: 1rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      height: 10vh;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #cadeira .wordcloud img {
+        max-width: 50%;   /* limita a largura a 50% da div */
+        max-height: 500px; /* limita a altura a 300px */
+        width: auto;      /* mantém proporção */
+        height: auto;     /* mantém proporção */
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;   /* centra a imagem horizontalmente */
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      #inicio h1 {
+        font-size: 2.5rem;
+      }
+      #inicio p {
+        font-size: 1.2rem;
+      }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      #cadeira {
+        flex-direction: column;
+      }
+
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Primeira Página Web!</h1>
-  <nav>
-    <a href="lab1/index.html">Lab1</a>
-    <a href="lab2/index.html">Lab2</a>
-    <a href="lab3/index.html">Lab3</a>
-  </nav>
-</header>
+  <!-- ===== MENU ===== -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#cadeira">Interfaces Web</a></li>
+      </ul>
+    </nav>
 
-<main>
-  <p>Eis a minha primeira página Web!</p>
-  <p>
-    Na Unidade Curricular de
-    <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
-      Desenvolvimento de Interfaces Web
-    </a>
-    abordaremos as seguintes tecnologias Web &#127760;:
-  </p>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React e Next.js</li>
-  </ul>
-  <p>Iremos criar soluções criativas!</p>
-</main>
+    <!-- Botão hamburguer com dropdown -->
+    <div class="menu-container" id="menu">
+      <div class="menu-btn" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="dropdown">
+        <a href="lab3/index.html">Cidade</a>
+        <a href="lab3/local.html">Localização</a>
+        <a href="lab3/multimedia.html">Multimédia</a>
+        <a href="lab3/info.html">Informação</a>
+      </div>
+    </div>
+  </header>
 
-<footer>
-  <p>Universidade Lusófona © 2025</p>
-</footer>
+  <main>
+    <!-- ===== HERO IMAGE ===== -->
+    <section id="inicio">
+      <div class="overlay">
+        <h1>Bem-vindo ao meu Portfólio</h1>
+        <p>Aqui encontrará os meus projetos e trabalhos de desenvolvimento web</p>
+        <a href="#projetos" class="cta-button">Ver Projetos</a>
+      </div>
+    </section>
 
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos">
+      <div>
+        <h2>Os Meus Projetos</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Lab1</h3>
+            <a href="lab1/index.html">O meu Lab1</a>
+          </div>
+          <div class="card">
+            <h3>Lab2</h3>
+            <a href="lab2/index.html">O meu Lab2</a>
+          </div>
+          <div class="card">
+            <h3>Lab3</h3>
+            <a href="lab3/index.html">O meu Lab3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DISCIPLINA ===== -->
+    <section id="cadeira">
+      <div class="texto">
+        <h2>Desenvolvimento de Interfaces Web</h2>
+        <p>
+          Esta disciplina foca-se no desenvolvimento de aplicações web modernas,
+          incluindo HTML, CSS e JavaScript.  
+          Aprende-se também princípios de design responsivo e usabilidade.
+        </p>
+      </div>
+      <div class="wordcloud">
+        <img src="lab3/images/wordcloud.jpg" alt="Wordcloud da disciplina">
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>DIW 2025</p>
+  </footer>
+
+  <script>
+    const menuContainer = document.getElementById("menu");
+    const menuBtn = document.getElementById("menu-btn");
+
+    // abre/fecha ao clicar no botão
+    menuBtn.addEventListener("click", () => {
+      menuContainer.classList.toggle("active");
+    });
+
+    // fecha ao clicar fora
+    document.addEventListener("click", (event) => {
+      if (!menuContainer.contains(event.target)) {
+        menuContainer.classList.remove("active");
+      }
+    });
+  </script>
 </body>
 </html>
