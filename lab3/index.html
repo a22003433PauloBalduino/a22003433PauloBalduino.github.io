@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cascais</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #222222; /* fundo cinzento escuro */
+            font-size: 18px;
+        }
+
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Galeria de imagens */
+        .galeria {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .galeria img {
+            width: 32%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        main, footer {
+            background-color: rgba(240, 240, 240, 0.9); /* cinzento claro suave */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(240, 240, 240, 0.9); /* igual ao main */
+            padding: 10px;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cascais</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Cidade</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="/lab2/info.html">Informação</a>
+        </nav>
+    </header>
+
+    <!-- Galeria de 3 imagens -->
+    <div class="galeria">
+        <img src="images/imagemCascais7.jpg" alt="Imagem de Cascais 7">
+        <img src="images/imagemCascais10.jpg" alt="Imagem de Cascais 10">
+        <img src="images/imagemCascais9.png" alt="Imagem de Cascais 9">
+    </div>
+
+    <main>
+        <h2>Minha Cidade</h2>
+        <p>Cascais, é uma cidade muito linda e a cidade que eu nasci</p>
+    </main>
+
+    <footer>
+        <p>DIW 2025</p>
+    </footer>
+</body>
+</html>

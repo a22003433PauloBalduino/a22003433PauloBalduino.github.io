@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Informação</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #222222; /* fundo cinzento escuro */
+      font-size: 18px;
+      color: #f0f0f0; /* texto claro para contraste */
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Tabela */
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 50%;
+      background-color: #ffffff; /* fundo branco */
+      border-radius: 8px;
+      overflow: hidden;
+      color: #222; /* texto escuro */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra suave */
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f5f5f5; /* cinza claro */
+      color: #222;
+    }
+
+    td {
+      background-color: #ffffff; /* branco */
+      color: #333;
+    }
+
+    td a {
+      color: #1a73e8; /* link em azul */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    /* Curiosidades */
+    .curiosidades {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+      background-color: #ffffff; /* fundo branco */
+      padding: 20px;
+      border-radius: 10px;
+      color: #222; /* texto escuro */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra suave */
+    }
+
+    .curiosidades h3 {
+      font-weight: bold;
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #000; /* título preto */
+    }
+
+    .curiosidades ul li {
+      margin-bottom: 8px;
+      color: #333; /* texto mais escuro */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cascais</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="index.html">Cidade</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="/lab2/info.html">Informação</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Informação</h1>
+    <p>Informações relevantes sobre a cidade de Cascais.</p>
+
+    <!-- Tabela de informações -->
+    <table>
+      <tr>
+        <th rowspan="2">Demografia</th>
+        <td>População</td>
+        <td>214.158 hab</td>
+      </tr>
+      <tr>
+        <td>Densidade populacional</td>
+        <td>1.500 hab/km²</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Geografia</th>
+        <td>Área</td>
+        <td>97 km²</td>
+      </tr>
+      <tr>
+        <td>Região</td>
+        <td>Lisboa</td>
+      </tr>
+      <tr>
+        <th>País</th>
+        <td colspan="2">Portugal</td>
+      </tr>
+      <tr>
+        <th>Website</th>
+        <td colspan="2"><a href="https://www.cascais.pt" target="_blank">www.cascais.pt</a></td>
+      </tr>
+    </table>
+
+    <!-- Lista de curiosidades -->
+    <div class="curiosidades">
+      <h3>Curiosidades sobre Cascais</h3>
+      <ul>
+        <li>Cascais foi um importante refúgio de pescadores antes de se tornar cidade turística.</li>
+        <li>É conhecida pelas suas praias e pelo Estoril, famoso pelo Casino e circuito de Fórmula 1.</li>
+        <li>A cidade tem um clima mediterrânico ameno durante quase todo o ano.</li>
+        <li>O centro histórico de Cascais preserva ruas estreitas e coloridas, com charme tradicional.</li>
+        <li>Cascais é ponto de partida de trilhos para explorar a costa atlântica e a serra de Sintra.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
