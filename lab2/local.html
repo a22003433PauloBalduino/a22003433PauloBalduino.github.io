@@ -27,38 +27,34 @@
             text-decoration: underline;
         }
 
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
         main {
-            margin-top: 50px;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* centraliza o conjunto */
             align-items: flex-start;
-            gap: 10px; /* espaço entre mapa e texto */
+            gap: 40px;
             padding: 20px;
         }
 
         .mapa {
-            flex: 1;
-            display: flex;           /* torna a div flex */
-            justify-content: center; /* centraliza o mapa horizontalmente */
-        }
-
-        .descricao {
-            flex: 1;
-            text-align: justify;
-            max-width: 500px;
-            margin-right: 600px; /* afasta do lado direito */
+            display: flex;
+            justify-content: center;
         }
 
         iframe {
-            width: 40%;
+            width: 500px; /* tamanho fixo */
             height: 450px;
             border: 0;
             border-radius: 10px;
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
+        .descricao {
+            max-width: 400px;
+            text-align: justify;
         }
     </style>
 </head>
@@ -74,7 +70,6 @@
     <h1>Localização</h1>
     <main>
         <div class="mapa">
-            <!-- Mapa incorporado -->
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.803550121085!2d-9.431581461470534!3d38.69577793387332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ec47379b79a97%3A0x870d3b7e1807bbc2!2sCascais!5e0!3m2!1sen!2spt!4v1759244312172!5m2!1sen!2spt" 
                 allowfullscreen="" 
