@@ -7,20 +7,32 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #222222; /* fundo cinzento escuro como no index */
             font-size: 18px;
+            color: #f0f0f0; /* texto claro para contrastar */
+        }
+
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-bottom: 10px;
         }
 
         nav {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
         }
 
@@ -28,14 +40,14 @@
             text-decoration: underline;
         }
 
-        h1 {
+        h2 {
             text-align: center;
-            margin: 30px 0;
+            margin: 30px 0 10px 0;
         }
 
         main {
             display: flex;
-            justify-content: center; /* centraliza o conjunto */
+            justify-content: center;
             align-items: flex-start;
             gap: 40px;
             padding: 20px;
@@ -47,7 +59,7 @@
         }
 
         iframe {
-            width: 500px; /* tamanho fixo */
+            width: 500px;
             height: 450px;
             border: 0;
             border-radius: 10px;
@@ -56,24 +68,32 @@
         .descricao {
             max-width: 400px;
             text-align: justify;
+            background-color: rgba(240, 240, 240, 0.9); /* cinzento claro suave */
+            color: #222; /* texto escuro dentro da caixa */
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .descricao h2 {
             font-weight: bold;
             margin-bottom: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <nav>
-     <a href="../index.html">Home</a>
-     <a href="index.html">Cidade</a>
-     <a href="local.html">Localização</a>
-     <a href="multimedia.html">Multimédia</a>
-     <a href="/lab2/info.html">Informação</a>
-    </nav>
+    <header>
+        <h1>Cascais</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Cidade</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="/lab2/info.html">Informação</a>
+        </nav>
+    </header>
 
-    <h1>Localização</h1>
+    <h2>Localização</h2>
     <main>
         <div class="mapa">
             <iframe 
