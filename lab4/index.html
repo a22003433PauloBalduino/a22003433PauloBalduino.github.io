@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lab4 Paulo Balduino</title>
+    <style>
+        body {
+            font-size: 18px;
+            background-color: #f7f7f8;
+            transition: background-color 0.6s ease;
+        }
+
+        li { transition: all 0.3s ease; }
+
+        button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 1em;
+            border: 2px solid #5a5af5;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input:focus { box-shadow: 0 0 5px #5a5af5; }
+
+        #campoTexto { background-color: #fff8b3; }
+        #corInput   { background-color: white; }
+        #item1 span { cursor: pointer; }
+        #contador {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Page</h1>
+    <p>Lorem Lorem Lorem</p>
+
+    <ol>
+        <!-- Opção 1 -->
+        <li id="item1"><span>Passa por aqui!</span></li>
+
+        <!-- Opção 2 -->
+        <li id="item2">
+            <span id="pintame">Pinta-me!</span>
+            <button id="btnRed" type="button">Red</button>
+            <button id="btnGreen" type="button">Green</button>
+            <button id="btnBlue" type="button">Blue</button>
+        </li>
+
+        <!-- Opção 3 -->
+        <li id="item3">
+            Experimenta escrever...
+            <input type="text" id="campoTexto" placeholder="">
+        </li>
+
+        <!-- Opção 4 -->
+        <li id="item4">
+            Escolha uma cor em inglês:
+            <input type="text" id="corInput" placeholder="">
+            <button id="btnSubmeter" type="button">submeter</button>
+        </li>
+
+        <!-- Opção 5 -->
+        <li id="item5">
+            <button id="btnConta" type="button">Conta!</button>
+            <span id="contador">0</span>
+        </li>
+    </ol>
+
+    <script>
+        // --- Opção 1 ---
+        const item1Span = document.querySelector("#item1 span");
+        const originalText = item1Span.textContent;
+        item1Span.addEventListener("mouseover", () => {
+            item1Span.textContent = "Obrigado por passares!";
+            item1Span.style.fontSize = "1.2em";
+        });
+        item1Span.addEventListener("mouseout", () => {
+            item1Span.textContent = originalText;
+            item1Span.style.fontSize = "1em";
+        });
+
+        // --- Opção 2 ---
+        const pintame = document.getElementById("pintame");
+        document.getElementById("btnRed").addEventListener("click", () => pintame.style.color = "red");
+        document.getElementById("btnGreen").addEventListener("click", () => pintame.style.color = "green");
+        document.getElementById("btnBlue").addEventListener("click", () => pintame.style.color = "blue");
+
+        // --- Opção 3 ---
+        const campoTexto = document.getElementById("campoTexto");
+        const cores = ["#ffcccc", "#fff9b1", "#ccffcc", "#e5ccff", "#cce5ff"];
+        let indiceCor = 0;
+        campoTexto.addEventListener("keydown", () => {
+            campoTexto.style.backgroundColor = cores[indiceCor];
+            indiceCor = (indiceCor + 1) % cores.length;
+        });
+
+        // --- Opção 4 ---
+        const corInput = document.getElementById("corInput");
+        const btnSubmeter = document.getElementById("btnSubmeter");
+        btnSubmeter.addEventListener("click", () => {
+            const cor = corInput.value.trim().toLowerCase();
+            if (!cor) return;
+            const temp = document.createElement("div");
+            temp.style.color = cor;
+            if (temp.style.color === "") {
+                alert("Cor inválida! Escreve uma cor válida em inglês (ex: red, blue, pink).");
+                return;
+            }
+            document.body.style.backgroundColor = cor;
+        });
+
+        // --- Opção 5: CONTADOR ---
+        const btnConta = document.getElementById("btnConta");
+        const contador = document.getElementById("contador");
+        let valor = 0; // começa em 0
+
+        btnConta.addEventListener("click", () => {
+            valor = valor + 1;       // incrementa exatamente 1
+            contador.textContent = valor;
+        });
+    </script>
+</body>
+</html>
